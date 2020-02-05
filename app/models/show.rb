@@ -24,4 +24,8 @@ class Show < ActiveRecord::Base
     self.where("rating >= ?", 5)
   end
   
+  def self.shows_by_alphabetical_order
+    self.where("rating = ?", self.highest_rating).first
+  end
+  
 end

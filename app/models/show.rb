@@ -16,4 +16,8 @@ class Show < ActiveRecord::Base
     self.where("rating = ?", self.lowest_rating).first
   end
   
+  def self.rating_sum
+    self.where("rating = ?", self.highest_rating).first
+  end
+  
 end
